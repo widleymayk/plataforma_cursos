@@ -30,36 +30,38 @@
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- * * SB Forms Contact Form * *-->
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- This form is pre-integrated with SB Forms.-->
-                                <!-- To make this form functional, sign up at-->
-                                <!-- https://startbootstrap.com/solution/contact-forms-->
-                                <!-- to get an API token!-->
                                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                    
+                                    <!-- Nome input (Novo campo adicionado) -->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" type="text" placeholder="Digite seu nome completo" data-sb-validations="required" />
+                                        <label for="name">Nome Completo</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">O nome é obrigatório.</div>
+                                    </div>
                                     
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                        <label for="email">Email address</label>
-                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                        <label for="email">Email</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">O email é obrigatório.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email não é válido.</div>
                                     </div>
                                     
-                                    <!-- Name input-->
+                                    <!-- Password input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                        <label for="name">Senha</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                        <input class="form-control" id="password" type="password" placeholder="Digite sua senha" data-sb-validations="required" />
+                                        <label for="password">Senha</label>
+                                        <div class="invalid-feedback" data-sb-feedback="password:required">A senha é obrigatória.</div>
                                     </div>
+
                                     <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                    <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Entrar</button></div>
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar o formulário!</div></div>
+                                    
+                                    <!-- Botões de ação -->
+                                    <div class="d-grid gap-3">
+                                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Entrar</button>
+                                        <button class="btn btn-outline-primary btn-lg" id="registerButton" type="button">Cadastrar</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -109,10 +111,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- SB Forms JS-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        <!-- Script adicional para o botão de cadastro -->
+        <script>
+            document.getElementById('registerButton').addEventListener('click', function() {
+                // Aqui você pode adicionar a lógica para cadastro
+                alert('Funcionalidade de cadastro será implementada aqui!');
+                // Ou redirecionar para uma página de cadastro:
+                // window.location.href = 'cadastro.php';
+            });
+        </script>
     </body>
 </html>
